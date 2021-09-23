@@ -1,7 +1,7 @@
 #!/usr/bin/env node
 import { calculateStockLevel } from "./main";
 
-calculateStockLevel("LT449/39/39")
+calculateStockLevel("LTV719449/39/39")
   .then((response) => {
     console.log(response);
   })

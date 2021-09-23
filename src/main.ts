@@ -67,8 +67,11 @@ export const calculateStockLevel = (
  * @param {*} filePath
  * @returns json
  */
-const getJsonFileContent = (filePath: string) => {
-  let content = fs.readFileSync(path.resolve(__dirname, filePath), "utf-8");
-
-  return JSON.parse(content);
+export const getJsonFileContent = (filePath: string) => {
+  try {
+    let content = fs.readFileSync(path.resolve(__dirname, filePath), "utf-8");
+    return JSON.parse(content);
+  } catch (error) {
+    throw "FILE_NOT_FOUND";
+  }
 };
